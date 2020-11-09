@@ -35,11 +35,11 @@ padding: 5px 15px;
 cursor: pointer;
 opacity: .8;}
 
-ol {padding-left: 20px;}
+ul {padding-left: 20px;}
 
-ol li {padding: 5px;color:#000;}
+ul li {padding: 5px;color:#000;}
 
-ol li:nth-child(even){background: #dfdfdf;}
+ul li:nth-child(even){background: #dfdfdf;}
 
 .strike{text-decoration: line-through;}
 

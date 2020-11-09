@@ -1,22 +1,33 @@
-let li = $('<li></li>');
-  let inputValue = $('#input').val();
+function newItem() {
+  let li = $("<li></li>");
+  let inputValue = $("#input").val();
+  let ul = $('#list');
   li.append(inputValue);
+  if (inputValue === "") {
+    alert('You must enter a value');
+  } else {
+    
+    ul.append(li);
+  }
+  
+    // li.addClass(".delete");
 
-let inputValue = $('#input').val();
-li.append(inputValue);
+  li.on("dblclick", crossOut);
 
-
-li.on('click', function () {
-    li.addClass('.strike');
-});
-
-li.addClass('.delete');
-
-li.on("click", function crossOut() {
+  function crossOut() {
     li.toggleClass("strike");
-});
+  }
 
-crossOutButton.on("click", deleteListItem);
-  function deleteListItem(){
-		li.addClass("delete")
-	}
+  let crossOutButton = $('<crossOutButton></crossOutButton>');
+  crossOutButton.addClass('crossOutButton');
+  crossOutButton.append(document.createTextNode('X'));
+  li.append(crossOutButton);
+  
+
+  crossOutButton.on("click", deleteListItem);
+  function deleteListItem() {
+    li.addClass("delete");
+  }
+
+  ul.sortable();
+}
